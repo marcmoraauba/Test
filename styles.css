@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #121212;
+  color: #f0f0f0;
+}
+
+#blocker {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, rgba(40, 80, 130, 0.85), rgba(10, 20, 35, 0.95));
+  z-index: 10;
+  cursor: pointer;
+  text-align: center;
+  padding: 2rem;
+}
+
+#instructions {
+  max-width: 380px;
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 16px;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 18px 32px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+#instructions h1 {
+  margin-top: 0;
+  font-size: 2.1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+#instructions p {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+  color: #d0e6ff;
+}
+
+#hud {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+#selected-block {
+  background: rgba(12, 20, 28, 0.78);
+  padding: 0.5rem 0.85rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+#crosshair {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+#crosshair::before,
+#crosshair::after {
+  content: '';
+  position: absolute;
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 2px;
+}
+
+#crosshair::before {
+  width: 2px;
+  height: 16px;
+  left: 7px;
+  top: 0;
+}
+
+#crosshair::after {
+  height: 2px;
+  width: 16px;
+  top: 7px;
+  left: 0;
+}
